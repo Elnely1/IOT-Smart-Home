@@ -132,7 +132,7 @@ void loop(){
         {
           ledcAnalogWrite(Led_channel_2, 255);   
         }
-        if (currentLine.endsWith("GET /H"))              //room2 off                                // Check to see if the client request was "GET /A" or "GET /B" and so on...:
+        if (currentLine.endsWith("GET /H"))             //room2 off                                // Check to see if the client request was "GET /A" or "GET /B" and so on...:
         {
           ledcAnalogWrite(Led_channel_2, 0);   
         }
