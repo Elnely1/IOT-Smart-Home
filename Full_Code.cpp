@@ -3,12 +3,12 @@
                                                                                       // In these 4 lines we have defined the PWM details for LED
 #define LEDC_TIMER_13_BIT  13
 #define LEDC_BASE_FREQ     5000
-#define LED_PIN            21
-#define LED_PIN1           22
-#define LED_PIN2           23
-#define LED_PIN3           24
-#define LED_PIN4           17
-#define SERVO_PIN          16
+#define LED_PIN            12
+#define LED_PIN1           14
+#define LED_PIN2           15
+#define LED_PIN3           27
+#define LED_PIN4           4
+#define SERVO_PIN          13
 #define LEDC_CHANNEL_0     0
 #define Led_channel_1      1
 #define Led_channel_2      2
