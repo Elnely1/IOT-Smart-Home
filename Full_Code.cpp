@@ -12,6 +12,7 @@
 #define LEDC_CHANNEL_0     0
 #define Led_channel_1      1
 #define Led_channel_2      2
+#define Led_channel_3      3
 #define Led_channel_4      4
 #define min(a,b) ((a)<(b)?(a):(b));                                                     // Defining Min Function
 
@@ -54,6 +55,8 @@ void setup()
     ledcAttachPin(LED_PIN1, Led_channel_1);
     ledcSetup(Led_channel_2, LEDC_BASE_FREQ, LEDC_TIMER_13_BIT);                       // PWM setup
     ledcAttachPin(LED_PIN2, Led_channel_2);
+    ledcSetup(Led_channel_3, LEDC_BASE_FREQ, LEDC_TIMER_13_BIT);                       // PWM setup
+    ledcAttachPin(LED_PIN3, Led_channel_3);
     ledcSetup(Led_channel_4, LEDC_BASE_FREQ, LEDC_TIMER_13_BIT);                       // PWM setup
     ledcAttachPin(LED_PIN4, Led_channel_4);
       
@@ -88,6 +91,8 @@ void loop(){
             client.print("<a href=\"/F\">Room1 OFF</a><br>");
             client.print("<a href=\"/G\">Room2 ON</a><br>");
             client.print("<a href=\"/H\">Room2 OFF</a><br>");
+            client.print("<a href=\"/J\">Room3 ON</a><br>");
+            client.print("<a href=\"/K\">Room3 OFF</a><br>");
             client.print("<a href=\"/I\">OFF All</a><br>");
             // client.print("<a href=\"/J\">Level 5 Full</a><br>");
             client.println();                                                            // The HTTP response ends with another blank line:
@@ -135,6 +140,14 @@ void loop(){
         if (currentLine.endsWith("GET /H"))             //room2 off                                // Check to see if the client request was "GET /A" or "GET /B" and so on...:
         {
           ledcAnalogWrite(Led_channel_2, 0);   
+        }
+        if (currentLine.endsWith("GET /J"))             //room2 off                                // Check to see if the client request was "GET /A" or "GET /B" and so on...:
+        {
+          ledcAnalogWrite(Led_channel_3, 0);   
+        }
+        if (currentLine.endsWith("GET /K"))             //room2 off                                // Check to see if the client request was "GET /A" or "GET /B" and so on...:
+        {
+          ledcAnalogWrite(Led_channel_3, 0);   
         }
         if (currentLine.endsWith("GET /I"))           //off all
         {
