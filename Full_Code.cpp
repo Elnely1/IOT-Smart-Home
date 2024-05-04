@@ -141,11 +141,11 @@ void loop(){
         {
           ledcAnalogWrite(Led_channel_2, 0);   
         }
-        if (currentLine.endsWith("GET /J"))             //room2 off                                // Check to see if the client request was "GET /A" or "GET /B" and so on...:
+        if (currentLine.endsWith("GET /J"))             //room3 on                               // Check to see if the client request was "GET /A" or "GET /B" and so on...:
         {
-          ledcAnalogWrite(Led_channel_3, 0);   
+          ledcAnalogWrite(Led_channel_3, 255);   
         }
-        if (currentLine.endsWith("GET /K"))             //room2 off                                // Check to see if the client request was "GET /A" or "GET /B" and so on...:
+        if (currentLine.endsWith("GET /K"))             //room3 off                                // Check to see if the client request was "GET /A" or "GET /B" and so on...:
         {
           ledcAnalogWrite(Led_channel_3, 0);   
         }
@@ -156,6 +156,7 @@ void loop(){
          ledcAnalogWrite(Led_channel_4, 0);
          ledcAnalogWrite(Led_channel_1, 0);
          ledcAnalogWrite(Led_channel_2, 0);
+         ledcAnalogWrite(Led_channel_3, 0);
         }
       }
     }
